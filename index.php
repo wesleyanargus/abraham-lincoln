@@ -14,6 +14,39 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+  <!-- Post info in the image part will not work yet, because it is not a loop -->
+      <div class="row">
+          <div class="row content">
+            <div class="col-md-7">
+              <div class="relative">
+              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_SenatorTalk2.jpg">
+                <div class="on-top white-top">
+                <h1><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h1>
+                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Nathaniel Warner</a>, Contributing Writer</span></h4>
+                </div>
+              </div>
+              <p><?php the_excerpt(); ?></p>
+            </div>
+            <div class="col-md-5">
+                            <div class="relative">
+              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_BunnyElecticConcert.jpg">
+                <div class="on-top white-top">
+                <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h2>
+                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Meg de Recat</a>, Staff Writer</span></h4>
+                </div>
+              </div>
+                            <div class="relative">
+              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/DESIRETALK2.jpg">
+                <div class="on-top white-top">
+                <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h2>
+                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Angelina Massoia</a>, Contributing Writer</span></h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+
 <?php
 $first_row = array(
   array("section" => "News",    "id" => 3),
