@@ -78,14 +78,36 @@ $second_row = array(
         <div class="col-md-3">
           <div class="box">
             <h2><a href="<?php echo esc_url(get_category_link($column["id"])); ?>"><?php echo $column["section"]; ?></a></h2>
-            <ul>
     				<?php
-    					$args = array( 'numberposts' => '3', 'category' => $column["id"], );
-    					$recent_posts = wp_get_recent_posts( $args );
-    					foreach( $recent_posts as $recent ){
+
+              $query = new WP_Query(array('category__and'=>array($column["id"], 87), 
+                                             'numberposts'=>1));
+              $count = 0;
+              while ( $query->have_posts() ) {
+                $query->the_post();
+                $top_post = get_post();
+                if($count == 0) {
+                  echo "<img src='". arg_photo($post, 155, '', '', true)  . "'>";
+                  echo "<ul>";
+                }
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+              }
+
+              $args = array(
+                  'category' => $column["id"],
+                  'category__not_in' => array(86, 87, 89),
+                  'numberposts' => 2,
+                  'orderby' => 'post_date',
+                  'order' => 'DESC'
+              );
+
+              $cat_posts = get_posts($args);
+
+    					foreach( $cat_posts as $post ){
                 //image for the first one
-    						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong></a>' . abraham_get_author(true) . '</li> ';
-    					}
+
+    						echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+              }
     				?>
             </ul>
           </div>
@@ -103,10 +125,15 @@ $second_row = array(
             <h2><a href="<?php echo esc_url(get_category_link($column["id"])); ?>"><?php echo $column["section"]; ?></a></h2>
             <ul>
 				<?php
-					$args = array( 'numberposts' => '3', 'category' => $column["id"], );
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong>' . abraham_get_author(true). '</li> ';
+          $args = array( 
+              'numberposts' => '3',
+              'category' => $column["id"],
+              'orderby' => 'post_date',
+              'order' => 'DESC'
+            );
+					$recent_posts = get_posts( $args );
+					foreach( $recent_posts as $post ){
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
 					}
 				?>
             </ul>
