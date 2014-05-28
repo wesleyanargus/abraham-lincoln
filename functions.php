@@ -26,6 +26,60 @@
 	======================================================================================================================== */
 
 	add_theme_support('post-thumbnails');
+	function abraham_display_author($uppercase = true) {
+		echo abraham_get_author($uppercase);
+	}
+
+	function abraham_get_author($uppercase = true) {
+		if ($uppercase) {
+			$b = 'B';
+		} else {
+			$b = 'b';
+		}
+		global $post;
+		if (arg_has_authors()) {
+	        $byline = arg_authors();
+	        $byline = $b.'y ' . $byline;
+
+	        if (arg_has_byline_sub()) $byline .= ', ' . arg_byline_sub(true);
+	        return $byline;
+	    } else {
+	    	return $b.'y '.get_the_author().', '.get_user_meta($post->post_author,"wpum_position", true);
+	    }
+		
+	}
+
+    function abraham_excerpt($id=false) {
+        global $post;
+
+        $old_post = $post;
+        if ($id != $post->ID) {
+            $post = get_page($id);
+        }
+
+        if (!$excerpt = trim($post->post_excerpt)) {
+            $excerpt = $post->post_content;
+            $excerpt = strip_shortcodes( $excerpt );
+            $excerpt = apply_filters('the_content', $excerpt);
+            $excerpt = str_replace(']]>', ']]>', $excerpt);
+            $excerpt = strip_tags($excerpt);
+            $excerpt_length = apply_filters('excerpt_length', 55);
+            $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+
+            $words = preg_split("/[\n\r\t ]+/", $excerpt, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+            if ( count($words) > $excerpt_length ) {
+                array_pop($words);
+                $excerpt = implode(' ', $words);
+                $excerpt = $excerpt . $excerpt_more;
+            } else {
+                $excerpt = implode(' ', $words);
+            }
+        }
+
+        $post = $old_post;
+
+        return $excerpt;
+    }
 	
 	// register_nav_menus(array('primary' => 'Primary Navigation'));
 
@@ -95,3 +149,4 @@
 			</article>
 		<?php endif;
 	}
+	?>

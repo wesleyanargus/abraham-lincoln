@@ -212,6 +212,7 @@ a:hover {
 }
 .content img {
 	max-width:100%;
+	min-height: 200px;
 }
 .content h1 a {
 	color:#231F20;
@@ -242,20 +243,25 @@ a:hover {
 .white-top a {
 	color: #a13b1c
 }
-.article .photo {
-	max-width: 30%;
+.article .wp-caption {
 	display:inline;
-	float:right;
-	margin-left:15px;
 	padding:10px;
 	border: 1px solid #CCCCCC;
-	text-align:center;
+}
+.article .alignleft {
+	float:left;
+	margin-right: 15px;
+}
+.article .alignright {
+	float:right;
+	margin-left: 15px;
 }
 .article .photo img {
 	max-width: 100%
 }
-.article .photo small {
+.article .wp-caption-text {
 	font-size: 80%;
+	text-align:center;
 }
 .article .box h2 a {
 	color:white;
@@ -365,3 +371,4 @@ a:hover {
 		line-height: 1.3em;
 	}
 }
+

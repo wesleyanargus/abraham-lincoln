@@ -15,35 +15,44 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
   <!-- Post info in the image part will not work yet, because it is not a loop -->
+  <?php
+    //86 is the category ID for slideshows
+    // $args = array( 'numberposts' => '3', 'category' => 86, );
+    // $recent_posts = wp_get_recent_posts( $args );
+
+    $category = 86;
+    $excluded_categories = (87);
+    $args = array(
+        'category' => $category,
+        'category__not_in' => $excluded_categories
+    );
+
+    $top_posts = get_posts($args);
+      //image for the first one
+    //echo '<li><a href="' . get_permalink($recent[0]["ID"]) . '" title="Look '.esc_attr($recent[0]["post_title"]).'" ><strong>' .   $recent[0]["post_title"].'</strong>By ' .   $recent[0]["post_author"].'</a> </li> ';
+  ?>
       <div class="row">
           <div class="row content">
-            <div class="col-md-7">
+          <?php
+            $count = 0;
+            foreach ($top_posts as $post) {
+          ?>
+            <div class="col-md-<?php echo ($count == 0) ? '7' : '5'; ?>">
               <div class="relative">
-              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_SenatorTalk2.jpg">
-                <div class="on-top white-top">
-                <h1><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h1>
-                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Nathaniel Warner</a>, Contributing Writer</span></h4>
-                </div>
-              </div>
-              <p><?php the_excerpt(); ?></p>
-            </div>
-            <div class="col-md-5">
-                            <div class="relative">
-              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_BunnyElecticConcert.jpg">
+                <img src="<? echo arg_photo($post, 628, '', '', true); ?>">
                 <div class="on-top white-top">
                 <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h2>
-                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Meg de Recat</a>, Staff Writer</span></h4>
-                </div>
+                <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
               </div>
-                            <div class="relative">
-              <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/DESIRETALK2.jpg">
-                <div class="on-top white-top">
-                <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h2>
-                <h4><span><?php the_date(); ?> <?php the_time(); ?> by <a href="#">Angelina Massoia</a>, Contributing Writer</span></h4>
-                </div>
               </div>
-
+              <?php if($count == 0) { ?>
+              <p><?php echo abraham_excerpt(); ?> </p>
+              <?php } ?>
             </div>
+          <?php
+            $count++; 
+            } 
+          ?>
           </div>
       </div>
 
@@ -75,13 +84,13 @@ $second_row = array(
     					$recent_posts = wp_get_recent_posts( $args );
     					foreach( $recent_posts as $recent ){
                 //image for the first one
-    						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong>By ' .   $recent["post_author"].'</a> </li> ';
+    						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong></a>' . abraham_get_author(true) . '</li> ';
     					}
     				?>
             </ul>
           </div>
         </div>
-        <php
+        <?php
           }
         ?>
       </div>
@@ -97,13 +106,13 @@ $second_row = array(
 					$args = array( 'numberposts' => '3', 'category' => $column["id"], );
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
-						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong>By ' .   $recent["post_author"].'</a> </li> ';
+						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" ><strong>' .   $recent["post_title"].'</strong>' . abraham_get_author(true). '</li> ';
 					}
 				?>
             </ul>
           </div>
         </div>
-        <php
+        <?php
           }
         ?>
         <div class="col-md-3">
