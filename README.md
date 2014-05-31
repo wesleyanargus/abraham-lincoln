@@ -5,11 +5,11 @@ Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.co
 
 ### Screenshots
 
-![First](http://i.imgur.com/zqpMxV2)
+![First](http://i.imgur.com/zqpMxV2.png)
 
-![Second](http://i.imgur.com/IBqhEFT)
+![Second](http://i.imgur.com/IBqhEFT.png)
 
-![Third](http://i.imgur.com/7R69yUB)
+![Third](http://i.imgur.com/7R69yUB.png)
 
 ## License 
 
