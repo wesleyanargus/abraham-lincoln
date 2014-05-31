@@ -15,7 +15,7 @@
             <div class="col-md-9">
               <div class="relative">
               
-                <div class="article-text">
+                <div class="article-text article-header">
 <?php if ( have_posts() ): ?>
                 <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
                 <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
@@ -40,7 +40,7 @@
     </section>
 <?php endwhile; ?>
               </div>
-              <div class="article-text">
+              <div class="article-text article-header">
                 <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
                 <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
 

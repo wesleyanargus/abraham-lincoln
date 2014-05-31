@@ -16,7 +16,7 @@
             <div class="col-md-9">
               <div class="relative">
               
-                <div class="article-text">
+                <div class="article-text article-header">
 <?php if ( have_posts() ): ?>
 
                 
@@ -24,7 +24,7 @@
                 <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
 
 
-                <h1><span>Search Results for '<?php echo get_search_query(); ?>'<span></h1>
+                <h1><span><a href="#">Search Results for '<?php echo get_search_query(); ?>'</a><span></h1>
                 <div class="clearfix"></div>
                 </div>
               </div>
@@ -34,13 +34,13 @@
 <?php while ( have_posts() ) : the_post(); ?>
 		<section>
           <h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-          <h4><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?></h4>
+          <h4><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php echo abraham_get_author(false); ?>. <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?></h4>
           <p><?php the_excerpt(); ?></p>
         </section>
 
 <?php endwhile; ?>
               </div>
-              <div class="article-text">
+              <div class="article-text article-header">
                 <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
                 <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
                 <div class="clearfix"></div>
