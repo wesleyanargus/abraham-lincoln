@@ -21,7 +21,7 @@
           <div class="row content article">
             <div class="col-md-9">
               <div class="relative">
-                <div class="article-text">
+                <div class="article-text article-header">
 	                <h1><span><a href="#"><?php the_title(); ?></a><span></h1>
                 </div>
               </div>

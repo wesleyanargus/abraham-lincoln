@@ -165,6 +165,9 @@ a:hover {
 .box ul li a {
 	color:inherit;
 }
+.box ul li a:not(:first-child) {
+	color: #d14c23;
+}
 .box img {
 	max-width: 100%;
 	max-height:155px;
@@ -212,7 +215,6 @@ a:hover {
 }
 .content img {
 	max-width:100%;
-	min-height: 200px;
 }
 .content h1 a {
 	color:#231F20;
@@ -282,6 +284,22 @@ a:hover {
 }
 .article-text section h2 {
 	font-weight: 900;
+}
+
+.article-header {
+    background: #231F20;
+    color: white;   
+}
+
+.article-header h1 a {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'abraham_lincolnregular', Georgia, serif;
+    font-size: 1.2em;
+}
+
+.article-header h4 {
+    color: white;
 }
 
 @media (min-width: 768px) {

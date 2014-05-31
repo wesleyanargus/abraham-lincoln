@@ -39,7 +39,7 @@
           ?>
             <div class="col-md-<?php echo ($count == 0) ? '7' : '5'; ?>">
               <div class="relative">
-                <img src="<? echo arg_photo($post, 628, '', '', true); ?>">
+                <img src="<? echo arg_photo($post, 650, '', '', true); ?>">
                 <div class="on-top white-top">
                 <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><span></h2>
                 <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
@@ -144,7 +144,26 @@ $second_row = array(
         ?>
         <div class="col-md-3">
           <div class="box pdf-box">
-            <h2>PDF Viewer</h2>
+            <h2>Media</h2>
+            <?php
+              $args = array( 
+                'numberposts' => '3',
+                'category' => 89,
+                'orderby' => 'post_date',
+                'order' => 'DESC'
+              );
+              $recent_posts = get_posts( $args );
+              $count = 0;
+              foreach( $recent_posts as $post ){
+                if($count == 0) {
+                  echo "<img src='". arg_photo($post, 155, '', '', true)  . "'>";
+                  echo "<ul>";
+                }
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+                $count++;
+              }
+            ?>
+            </ul>
           </div>
         </div>
       </div>

@@ -16,23 +16,19 @@
           <div class="row content article">
             <div class="col-md-9">
               <div class="relative">
-                <div class="article-text">
+                <div class="article-text article-header">
 	                <h1><span><a href="#"><?php the_title(); ?></a><span></h1>
-	                <h4><span><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?></span></h4>
+	                <h4><span><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?>, <?php the_time(); ?></time> <? echo abraham_get_author(false); ?></span></h4>
                 </div>
               </div>
               <div class="article-text">
-                <!--<div class="photo">
-                <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_SenatorTalk2.jpg">
-                <small>Trisha Arora/Photo Editor</small>
-                </div>-->
                 <?php the_content(); ?>
                 
-					<?php if ( get_the_author_meta( 'description' ) ) : ?>
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
-					<h3>About <?php echo get_the_author() ; ?></h3>
-					<?php the_author_meta( 'description' ); ?>
-					<?php endif; ?>
+      					<?php if ( get_the_author_meta( 'description' ) ) : ?>
+      					<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
+      					<h3>About <?php echo get_the_author() ; ?></h3>
+      					<?php the_author_meta( 'description' ); ?>
+      					<?php endif; ?>
               </div>
               <div class="article-text">
               	<?php comments_template( '', true ); ?>
