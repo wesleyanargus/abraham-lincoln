@@ -20,8 +20,9 @@
 <?php if ( have_posts() ): ?>
 
                 
-                <button type="button" class="btn btn-argus pull-right">Newer posts &raquo;</button>
-                <button type="button" class="btn btn-argus pull-right">&laquo; Older posts</button>
+                <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
+                <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
+
 
                 <h1><span>Search Results for '<?php echo get_search_query(); ?>'<span></h1>
                 <div class="clearfix"></div>
@@ -40,8 +41,8 @@
 <?php endwhile; ?>
               </div>
               <div class="article-text">
-              <button type="button" class="btn btn-argus pull-right">Newer posts &raquo;</button>
-                <button type="button" class="btn btn-argus pull-right">&laquo; Older posts</button>
+                <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
+                <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
                 <div class="clearfix"></div>
               </div>
 <?php else: ?>

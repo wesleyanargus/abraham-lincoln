@@ -22,8 +22,8 @@
               
                 <div class="article-text">
 <?php if ( have_posts() ): ?>
-                <button type="button" class="btn btn-argus pull-right">Newer posts &raquo;</button>
-                <button type="button" class="btn btn-argus pull-right">&laquo; Older posts</button>
+                <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
+                <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
 
                 <?php if ( is_day() ) : ?>
 				<h2>Archive: <?php echo  get_the_date( 'D M Y' ); ?></h2>							
@@ -49,8 +49,9 @@
 <?php endwhile; ?>
               </div>
               <div class="article-text">
-              <button type="button" class="btn btn-argus pull-right">Newer posts &raquo;</button>
-                <button type="button" class="btn btn-argus pull-right">&laquo; Older posts</button>
+                <?php previous_posts_link('<span class="btn btn-argus pull-right">Newer posts &raquo;</span>'); ?>
+                <?php next_posts_link('<span class="btn btn-argus pull-right">&laquo; Older posts</span>'); ?>
+                
                 <div class="clearfix"></div>
               </div>
 <?php else: ?>

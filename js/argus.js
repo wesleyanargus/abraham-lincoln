@@ -14,5 +14,5 @@ $("nav li").fitText();
 $('.date').html(Argus.getFormattedDate(new Date()));
 $('#search').popover({
 	html:true,
-	content: '<form class="form-inline" role="form"><div class="form-group"><input type="text" class="form-control" id="q" placeholder="Search in Argus"><button type="submit" class="btn btn-argus">Go</button></div></form>'
+	content: '<form action="/"><div class="form-group"><input type="text" class="form-control" name="s" id="s" placeholder="Search in Argus"><button type="submit" class="btn btn-argus">Go</button></div></form>'
 });
