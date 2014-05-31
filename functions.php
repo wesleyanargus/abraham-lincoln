@@ -81,6 +81,24 @@
         return $excerpt;
     }
 	
+
+    function panoptes_display_author_archive_post() {
+        global $post;
+        ?>
+            <div class="categorypost">
+                <h2 class="postlist"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                <?php
+                    abraham_display_author();
+                    abraham_display_time();
+                    ?>
+                    <!-- user page abraham -->
+                        <p><?php the_excerpt(); ?></p>
+                    <?php
+                 wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) );
+                 ?>
+            </div>
+        <?php
+    }
 	// register_nav_menus(array('primary' => 'Primary Navigation'));
 
 	/* ========================================================================================================================

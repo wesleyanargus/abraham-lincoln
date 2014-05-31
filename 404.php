@@ -9,7 +9,7 @@
  * @since 		Abraham Lincoln 0.1.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php get_header(); ?>
       <div class="row">
           <div class="row content article">
             <div class="col-md-9">
@@ -25,4 +25,4 @@
           </div>
       </div>
 
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+<?php get_footer(); ?>

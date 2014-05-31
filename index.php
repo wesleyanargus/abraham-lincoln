@@ -13,7 +13,7 @@
  * @since     Abraham Lincoln 0.1.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php get_header(); ?>
   <!-- Post info in the image part will not work yet, because it is not a loop -->
   <?php
     //86 is the category ID for slideshows

@@ -9,7 +9,7 @@
  * @since     Abraham Lincoln 0.1.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <div class="row">
@@ -41,4 +41,4 @@
       </div>
 <?php endwhile; ?>
 
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+<?php get_footer(); ?>
