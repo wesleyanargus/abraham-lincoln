@@ -1,7 +1,15 @@
 abraham-lincoln
 ===============
 
-Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.com). It is not live yet since it's in progress.
+Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.com). It is not live yet since it's in progress. It is mostly specific to the plugins and structures used by the Wesleyan Argus.
+
+### Screenshots
+
+![First](http://i.imgur.com/zqpMxV2)
+
+![Second](http://i.imgur.com/IBqhEFT)
+
+![Third](http://i.imgur.com/7R69yUB)
 
 ## License 
 
