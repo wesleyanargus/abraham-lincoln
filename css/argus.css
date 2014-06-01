@@ -322,6 +322,11 @@ a:hover {
     color: white;
 }
 
+.very-bottom {
+	color: #333;
+	font-size: 0.8em;
+}
+
 @media (min-width: 768px) {
   	.navbar .navbar-collapse {
 	  text-align: center;

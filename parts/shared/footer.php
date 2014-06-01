@@ -16,5 +16,11 @@
                 </div><!--/.navbar-collapse -->
               </div>
           </div>
+          <span class="very-bottom">
+            Copyright ©2014 The Wesleyan Argus / 
+            <a href="http://github.com/joom/abraham-lincoln">
+              <i class="fa fa-code-fork"></i>
+            </a>
+          </span>
       </footer>
     </div> <!-- /container -->
