@@ -11,6 +11,7 @@
                     <li><a href="/speaker-series">Speaker Series</a></li>
                     <li><a href="/adpricing">Ad Pricing</a></li>
                     <li><a href="/join">Join Our Staff</a></li>
+                    <li><a href="/wp-admin">Login</a></li>
                   </ul>
                 </div><!--/.navbar-collapse -->
               </div>

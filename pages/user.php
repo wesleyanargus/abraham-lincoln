@@ -1,4 +1,16 @@
 <?php
+/**
+ * The template for displaying user pages
+ *
+ * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts()
+ *
+ * @package   WordPress
+ * @subpackage  Abraham Lincoln
+ * @since     Abraham Lincoln 0.1.0
+ */
+
+//this file is supposed to be located in /wp-content/themes/argus/pages/user.php
+
 require_once('../../../../wp-load.php');
 require_once('../../../../wp-includes/registration.php');
 require_once('../../../../wp-includes/user.php');
@@ -12,8 +24,6 @@ if ($uid) {
     $userinfo = get_userdata($uid);
     $arg_title = array('User', $userinfo->nickname);
 }
-
-get_header();
 
 if ($uid) {
     $photo = (file_exists(ABSPATH . "wp-content/plugins/argus-leadphoto-box/lib/static/$username.jpg")) ?
@@ -32,60 +42,46 @@ SELECT DISTINCT ID FROM wp_posts
     ORDER BY post_date DESC
 END;
     $posts = $wpdb->get_col($query);
-}?>
-        <div class="container">
-        <div class="span-18 article last">
-<?php
-    $section = $posts ? 'section' : '';
+}
 
-    /*echo "            <div class=\"$section clearfix\">\n";*/
+?>
+<?php get_header(); ?>
+      <div class="row">
+          <div class="row content article">
+            <div class="col-md-9">
+              <div class="relative">
+              
+                <div class="article-text article-header">
 
-   /*
- if ($photo)
-        echo "            <p class=\"photo\"><img src=\"$photo\" /></p>\n";
-*/
 
-    /*if ($position)
-        $byline = ($active ? '' : 'Former ') . $position;*/
+                <h1><span><a href="#"><?php echo $userinfo->nickname; ?></a><span></h1>
+                <h4><?php echo count($posts); ?> Articles</h4>
+                <div class="clearfix"></div>
+                </div>
+              </div>
+             
+              <div class="article-text">
 
-    echo "            <h1 class=\"categoryheading\">{$userinfo->nickname}</h1>\n";
-    echo "            <p class=\"byline\">$byline</p>\n";
-
-   /*
- if ($bio)
-        echo arg_nl2p($bio) . "\n";
-*/
-
-    /*echo "            </div>\n";*/
-
-    if ($posts) {
-        echo "            <strong>".count($posts)." Articles</strong>\n";
-
+        <?php
         for ($i = 0; $i < count($posts); ++$i) {
-            $post = get_post($posts[$i]);
-            abraham_display_author_archive_post();
-        }
-    }
+          $post = get_post($posts[$i]);
+        ?>
+        <section>
+          <h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+          <h4><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php echo abraham_get_author(false); ?>. <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?></h4>
+          <p><?php the_excerpt(); ?></p>
+        </section>
 
-    echo "        </div>\n";
-?>
-        </div>
-        </div>
+        <?php } ?>
+              </div>
 
-<?php
-    get_footer();
-    
-/** stolen from somewhere */
-function arg_nl2p ($text) { 
-    // strip out html (I think you wanted that?) 
-    $text = strip_tags($text); 
-    // convert line endings 
-    $text = preg_replace('/\r\n?/', "\n", $text); 
-    // add <p>s, remove trailing and leading spaces 
-    $text = preg_replace('/\s*\S.*?(\n\s*\n|$)/es', '"<p>" . trim("$0") . "</p>"', $text); 
-    // add <br/>s where appropriate 
-    $text = preg_replace('/\s*\n\s*/', "<br/>", $text); 
+            </div>
+            <div class="col-md-3">
+            <?php get_sidebar(); ?>
+            </div>
+          </div>
+      </div>
 
-    return $text; 
-} 
-?>
+
+
+<?php get_footer(); ?>
