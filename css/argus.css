@@ -322,9 +322,16 @@ a:hover {
     color: white;
 }
 
+footer {
+	text-align: center;
+}
+
 .very-bottom {
-	color: #333;
 	font-size: 0.8em;
+}
+
+.very-bottom a {
+	color: #333;
 }
 
 @media (min-width: 768px) {
