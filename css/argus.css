@@ -198,6 +198,26 @@ a:hover {
 .nav li a:hover {
 	text-decoration: underline;
 }
+
+#search input {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    background: transparent;
+    border: 0;
+    width: 0px;
+}
+
+#search input:focus {
+    width: 200px !important;
+    outline: none;
+    border: 1px white solid;
+}
+
+#search:hover {
+	text-decoration: none;
+}
+
 .content {
 	padding-right: 15px;
 	padding-left: 15px;

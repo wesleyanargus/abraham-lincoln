@@ -12,7 +12,18 @@ Argus = {
 $(".header h1").fitText(1.2);
 $("nav li").fitText();
 $('.date').html(Argus.getFormattedDate(new Date()));
-$('#search').popover({
-	html:true,
-	content: '<form action="/"><div class="form-group"><input type="text" class="form-control" name="s" id="s" placeholder="Search in Argus"><button type="submit" class="btn btn-argus">Go</button></div></form>'
+
+$('#search i').click(function() {
+	var input = $('#search input');
+	if(input.width() < 100) {
+		input.focus();
+	} else {
+		window.location = '/?s=' + input.val();
+	}
+});
+
+$("#search input").keydown(function(e) {
+  if (e.keyCode == 13) {
+    window.location = '/?s=' + $('#search input').val();
+  }
 });

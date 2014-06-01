@@ -17,7 +17,7 @@
             <li><a href="/section/arts">Arts</a></li>
             <li><a href="/section/sports">Sports</a></li>
             <li><a href="/section/food">Food</a></li>
-            <li><a id="search" data-container="body" data-toggle="popover" data-placement="bottom"><i class="fa fa-search"></i></a></li>
+            <li><a id="search"><i class="fa fa-search"></i><input></a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
