@@ -128,8 +128,8 @@ a:hover {
 }
 .box {
 	background: rgb(255, 255, 255);
-    /* RGBa with 0.6 opacity */
-    background: rgba(255, 255, 255, 0.6);
+    /* RGBa with 0.8 opacity */
+    background: rgba(255, 255, 255, 0.8);
 
 }
 
@@ -244,7 +244,8 @@ a:hover {
 	color:#231F20;
 	font-weight: 900;
 	font-size:1em;
-	line-height: 1.2em;
+	line-height: 1.4em;
+
 }
 .content h4 {
 	color:#231F20;
@@ -258,7 +259,9 @@ a:hover {
 	margin-bottom:10px;
 }
 .white-top span {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.85);
+	padding: 3px;
+	-webkit-box-decoration-break: clone;
 }
 .white-top a {
 	color: #a13b1c
