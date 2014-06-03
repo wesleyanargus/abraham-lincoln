@@ -1,7 +1,5 @@
 body {
 	background-size: 100%;
-	font-family: Helvetica, 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
-
 }
 body:after {
 	top: 0; bottom: 0; left: 0; right: 0;
@@ -422,3 +420,16 @@ footer {
 	}
 }
 
+@media (min-width: 992px) {
+    .front-sections .col-md-3 {
+        display:table-cell;
+        float:none;
+        overflow: hidden; 
+    }
+    .front-sections .box {
+        height:100%;
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;  
+        
+    }
+}
