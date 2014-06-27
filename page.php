@@ -33,9 +33,11 @@
                 <?php the_content(); ?>
 				
               </div>
+              <?php if(!is_page()) : ?>
               <div class="article-text">
               	<?php comments_template( '', true ); ?>
               </div>
+              <?php endif; ?>
             </div>
             <div class="col-md-3">
               <?php get_sidebar(); ?>
