@@ -5,17 +5,19 @@ Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.co
 
 ### Screenshots
 
-![First](http://i.imgur.com/zqpMxV2.png)
+![First](http://i.imgur.com/baR7Zf3.png)
 
-![Second](http://i.imgur.com/IBqhEFT.png)
+![Second](http://i.imgur.com/udKxMLV.png)
 
-![Third](http://i.imgur.com/7R69yUB.png)
+![Third](http://i.imgur.com/3ozTppP.png)
 
-## License 
+![Fourth](http://i.imgur.com/4HoGBZy.png)
+
+## License
 
 (The MIT License)
 
-Copyright (c) 2014 [Cumhur Korkut](http://joom.github.io)
+Copyright (c) 2014 [Cumhur Korkut](http://joom.im)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -36,4 +38,4 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Also, see external/StarkersLicense.txt to see the license for [Starkers](http://github.com/viewportindustries/starkers).
+See external/StarkersLicense.txt for the license for [Starkers](http://github.com/viewportindustries/starkers).
