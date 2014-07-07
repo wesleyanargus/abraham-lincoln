@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php 
+    <?php
       if ( is_category('204') || in_category('204') ) { //hides "hidden archives"
         echo '<meta name="robots" content="noindex" />';
-      } 
+      }
     ?>
     <title><?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?></title>
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/abraham/stylesheet.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fonts/abraham/stylesheet.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/css/argus.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/dist/argus.min.css" rel="stylesheet">
     <?php wp_head(); ?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
