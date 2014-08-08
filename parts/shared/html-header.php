@@ -9,7 +9,10 @@
     <meta name="author" content="">
     <?php
       if ( is_category('204') || in_category('204') ) { //hides "hidden archives"
-        echo '<meta name="robots" content="noindex" />';
+        echo '<meta name="robots" content="noindex,nofollow" />';
+      }
+      if ( $_SERVER['REQUEST_URI'] == "/user/apachner/"  ) { //hides certain users' articles
+        echo '<meta name="robots" content="noindex,nofollow" />';
       }
     ?>
     <title><?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?></title>
