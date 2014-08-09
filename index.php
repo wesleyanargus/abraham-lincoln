@@ -4,7 +4,7 @@
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file 
+ * E.g., it puts together the home page when no home.php file
  *
  * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts()
  *
@@ -30,29 +30,44 @@
     $top_posts = get_posts($args);
       //image for the first one
     //echo '<li><a href="' . get_permalink($recent[0]["ID"]) . '" title="Look '.esc_attr($recent[0]["post_title"]).'" ><strong>' .   $recent[0]["post_title"].'</strong>By ' .   $recent[0]["post_author"].'</a> </li> ';
+    $post = array_shift($top_posts);
   ?>
       <div class="row">
           <div class="row content">
-          <?php
-            $count = 0;
-            foreach ($top_posts as $post) {
-          ?>
-            <div class="col-md-<?php echo ($count == 0) ? '7' : '5'; ?>">
+            <div class="col-md-7">
               <div class="relative">
                 <img src="<? echo arg_photo($post, 650, '', '', true); ?>">
                 <div class="on-top white-top">
-                <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></span></h2>
-                <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
+                  <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></span></h2>
+                  <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
+                </div>
               </div>
-              </div>
-              <?php if($count == 0) { ?>
               <p><?php echo abraham_excerpt(); ?> <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">[Continue]</a></p>
-              <?php } ?>
             </div>
-          <?php
-            $count++; 
-            } 
-          ?>
+            <div class="col-md-5">
+            <?php
+              $count = 0;
+              foreach ($top_posts as $post) {
+                if($count < 5) {
+            ?>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img src="<? echo arg_photo($post, 170, '', '', true); ?>">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">
+                    <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                  </h4>
+                  <h5><span><? echo abraham_get_author(false); ?></span></h5>
+                  <p><?php echo shorten_string(abraham_excerpt(), 10); ?></p>
+                </div>
+              </div>
+            <?php
+                }
+                $count++;
+              }
+            ?>
+            </div>
           </div>
       </div>
 
@@ -80,7 +95,7 @@ $second_row = array(
             <h2><a href="<?php echo esc_url(get_category_link($column["id"])); ?>"><?php echo $column["section"]; ?></a></h2>
     				<?php
 
-              $query = new WP_Query(array('category__and'=>array($column["id"], 87), 
+              $query = new WP_Query(array('category__and'=>array($column["id"], 87),
                                              'numberposts'=>1));
               $count = 0;
               while ( $query->have_posts() ) {
@@ -125,7 +140,7 @@ $second_row = array(
             <h2><a href="<?php echo esc_url(get_category_link($column["id"])); ?>"><?php echo $column["section"]; ?></a></h2>
             <ul>
 				<?php
-          $args = array( 
+          $args = array(
               'numberposts' => '3',
               'category' => $column["id"],
               'orderby' => 'post_date',
@@ -146,7 +161,7 @@ $second_row = array(
           <div class="box pdf-box">
             <h2>Media</h2>
             <?php
-              $args = array( 
+              $args = array(
                 'numberposts' => '3',
                 'category' => 89,
                 'orderby' => 'post_date',

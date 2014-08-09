@@ -50,7 +50,7 @@ a:hover {
 	font-size:0.7em;
 }
 .header .the {
-	vertical-align: super;
+	vertical-align: baseline;
 	font-size:0.7em;
 }
 .header .argus {
@@ -203,10 +203,11 @@ a:hover {
     background: transparent;
     border: 0;
     width: 0px;
+    margin-left: 4px;
 }
 
 #search input:focus {
-    width: 200px !important;
+    width: 180px !important;
     outline: none;
     border: 1px white solid;
 }
@@ -257,6 +258,23 @@ a:hover {
 .content .col-md-5 .relative {
 	margin-bottom:10px;
 }
+
+.content .col-md-5 .media {
+  background: rgba(255,255,255,.6);
+  padding: 5px;
+}
+
+.content .col-md-5 .media h4.media-heading a {
+  color: #231F20 !important;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.content .col-md-5 .media h5 {
+  margin-top: 0px;
+  font-weight: 200;
+}
+
 .white-top span {
 	background-color: rgba(255, 255, 255, 0.85);
 	padding: 3px;
