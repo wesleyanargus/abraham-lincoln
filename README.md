@@ -3,15 +3,13 @@ abraham-lincoln
 
 Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.com). It is not live yet since it's in progress. It is mostly specific to the plugins and structures used by the Wesleyan Argus.
 
-### Screenshots (of older versions)
+### Screenshots
 
-![First](http://i.imgur.com/baR7Zf3.png)
+![First](http://i.imgur.com/rW0TXgy.png)
 
-![Second](http://i.imgur.com/udKxMLV.png)
+![Second](http://i.imgur.com/qyQqmeJ.png)
 
-![Third](http://i.imgur.com/3ozTppP.png)
-
-![Fourth](http://i.imgur.com/4HoGBZy.png)
+![Third](http://i.imgur.com/bXEVboq.png)
 
 ## License
 
