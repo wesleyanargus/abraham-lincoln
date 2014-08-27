@@ -59,7 +59,7 @@
                     <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
                   </h4>
                   <h5><span><? echo abraham_get_author(false); ?></span></h5>
-                  <p><?php echo shorten_string(abraham_excerpt(), 10); ?></p>
+                  <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
                 </div>
               </div>
             <?php

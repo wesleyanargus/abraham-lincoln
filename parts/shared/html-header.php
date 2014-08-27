@@ -21,6 +21,21 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/dist/argus.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="<?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?>">
+    <meta itemprop="description" content="Wesleyan University's twice-weekly student newspaper since 1868.">
+    <meta itemprop="image" content="http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://wesleyanargus.com/" />
+    <meta property="og:image" content="http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png" />
+    <meta property="og:description" content="Wesleyan University's twice-weekly student newspaper since 1868." />
+    <meta property="og:site_name" content="The Wesleyan Argus" />
+
     <?php wp_head(); ?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
