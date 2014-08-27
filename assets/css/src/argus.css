@@ -10,29 +10,29 @@ body:after {
     content: "";
 }
 body > .container {
-	background-color: white;
+	background-color: transparent;
 }
 a {
-	color:#d14c23;
+	color:#D1232A;
 }
 a:hover {
-	color:#d14c23;
+	color:#D1232A;
 }
 .btn-argus {
-	color:#d14c23;
+	color:#D1232A;
 	background-color:transparent;
-	border-color: #d14c23;
+	border-color: #D1232A;
 	border-radius:0;
 	margin-left:15px;
 	margin-top:8px;
 	float:left;
 }
 .btn-argus:hover {
-	color:#d14c23;
+	color:#D1232A;
 	background-color:rgba(209,76,35,0.1);
 }
 .header {
-	background-color: white;
+	background-color: transparent;
 	color:#231F20;
 	text-align: center;
 	padding: 10px;
@@ -50,9 +50,17 @@ a:hover {
 .header .the {
 	vertical-align: baseline;
 	font-size:0.7em;
+  margin-right: -5px;
 }
 .header .argus {
 	color: #D1232A;
+}
+#logo {
+  background-color: white;
+  background-image: url('../../img/logo.png');
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position-x: 7%;
 }
 .date {
   color: #D1232A;
@@ -89,7 +97,8 @@ a:hover {
 }
 .navbar-inverse {
 	border:none;
-	background-color: white;
+	background-color: transparent;
+  font-size: 0.92em;
 }
 .navbar-inverse .navbar-nav > li > a {
 	color:#231F20;
@@ -175,7 +184,7 @@ a:hover {
 	color:inherit;
 }
 .box ul li a:not(:first-child) {
-	color: #d14c23;
+	color: #D1232A;
 }
 .box img {
 	max-width: 100%;
@@ -198,7 +207,7 @@ a:hover {
 	font-size:0.9em;
 }
 .social-icons a:hover {
-	color:#d14c23;
+	color:#D1232A;
 }
 
 .nav li a {
@@ -293,10 +302,14 @@ a:hover {
 	-webkit-box-decoration-break: clone;
 }
 .white-top h2 {
-  margin-top: 0;
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+.white-top h4 {
+  margin-top: 0px;
 }
 .white-top a {
-	color: #a13b1c
+	color: #D1232A;
 }
 .article .wp-caption {
 	display:inline;
@@ -380,6 +393,9 @@ footer {
 	.article .box {
 		margin-bottom:20px;
 	}
+  .header .the {
+    margin-right: -15px;
+  }
 }
 @media (max-width: 1200px) {
 	.navbar {

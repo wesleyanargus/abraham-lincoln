@@ -11,7 +11,7 @@ jQuery(function () {
     }
   };
 
-  $(".header h1").fitText(1.2);
+  $(".header h1").fitText(1.1);
   $("nav li").fitText();
   $('.date').html(Argus.getFormattedDate(new Date()));
 
