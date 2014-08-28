@@ -16,21 +16,17 @@
 <?php get_header(); ?>
   <!-- Post info in the image part will not work yet, because it is not a loop -->
   <?php
-    //86 is the category ID for slideshows
-    // $args = array( 'numberposts' => '3', 'category' => 86, );
-    // $recent_posts = wp_get_recent_posts( $args );
-
-    $category = 86;
-    $excluded_categories = (87);
+    //286 is the category ID for the primary post
+    $category = 286;
     $args = array(
-        'category' => $category,
-        'category__not_in' => $excluded_categories
+        'category' => $category
     );
 
     $top_posts = get_posts($args);
+    echo "<!-- total " . count($top_posts) . " posts -->";
       //image for the first one
     //echo '<li><a href="' . get_permalink($recent[0]["ID"]) . '" title="Look '.esc_attr($recent[0]["post_title"]).'" ><strong>' .   $recent[0]["post_title"].'</strong>By ' .   $recent[0]["post_author"].'</a> </li> ';
-    $post = array_shift($top_posts);
+    $post = $top_posts[0];
   ?>
       <div class="row">
           <div class="row content">
@@ -46,10 +42,20 @@
             </div>
             <div class="col-md-5">
             <?php
+              //86 is the category ID for Secondary Posts
+              $category = 86;
+              $excluded_categories = (87);
+              $args = array(
+                  'category' => $category,
+                  'category__not_in' => $excluded_categories
+              );
+
+              $top_posts = get_posts($args);
+
               $count = 0;
               foreach ($top_posts as $post) {
                 if($count < 5) {
-            ?>
+              ?>
               <div class="media">
                 <a class="pull-left" href="#">
                   <img src="<? echo arg_photo($post, 170, '', '', true); ?>">

@@ -187,7 +187,8 @@ a:hover {
 	color: #D1232A;
 }
 .box img {
-	max-width: 100%;
+	/* max-width: 100%; */
+  max-width: 262px;
 	max-height:155px;
 	padding-left:15px;
 	padding-right: 15px;
