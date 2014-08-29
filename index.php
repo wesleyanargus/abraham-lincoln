@@ -34,7 +34,9 @@
               <div class="relative">
                 <img src="<? echo arg_photo($post, 650, '', '', true); ?>">
                 <div class="on-top white-top">
-                  <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></span></h2>
+                  <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
+                    <?php echo str_replace(":", ":<br>", get_the_title()); ?>
+                  </a></span></h2>
                   <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
                 </div>
               </div>

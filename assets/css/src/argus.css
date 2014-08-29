@@ -255,7 +255,9 @@ a:hover {
   width: 100%;
 }
 .content img {
-	/* max-width:100%; */
+	max-width:100%;
+}
+.top .col-md-7 img {
   width:100%;
 }
 .content h1 a {
