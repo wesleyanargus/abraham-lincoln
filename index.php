@@ -29,7 +29,7 @@
     $post = $top_posts[0];
   ?>
       <div class="row">
-          <div class="row content">
+          <div class="row content top">
             <div class="col-md-7">
               <div class="relative">
                 <img src="<? echo arg_photo($post, 650, '', '', true); ?>">
@@ -38,7 +38,7 @@
                   <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
                 </div>
               </div>
-              <p><?php echo abraham_excerpt(); ?> <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">[Continue]</a></p>
+                <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
             </div>
             <div class="col-md-5">
             <?php

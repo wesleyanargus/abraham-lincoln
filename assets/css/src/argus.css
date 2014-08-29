@@ -255,7 +255,8 @@ a:hover {
   width: 100%;
 }
 .content img {
-	max-width:100%;
+	/* max-width:100%; */
+  width:100%;
 }
 .content h1 a {
 	color:#231F20;
