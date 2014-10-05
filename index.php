@@ -191,4 +191,15 @@ $second_row = array(
         </div>
       </div>
 
+  <script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function(){
+      if ($(window).width() > 960) {
+        console.log("ready!");
+        var diff = $('.col-md-5').height() - $('.col-md-7').height();
+        var curr = $('.col-md-7 p').height();
+        $('.col-md-7 p').height(curr + diff + 10);
+        console.log(curr + diff + 10);
+      }
+    });
+  </script>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer') ); ?>

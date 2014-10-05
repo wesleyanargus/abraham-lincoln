@@ -32,11 +32,11 @@ if ($uid) {
     $bio = get_usermeta($uid, 'description');
     $position = get_usermeta($uid, '_arg_position');
     $active = get_usermeta($uid, '_arg_active');
-    
+
     $query = <<<END
 SELECT DISTINCT ID FROM wp_posts
     JOIN wp_postmeta ON wp_posts.ID = wp_postmeta.post_id
-    WHERE wp_postmeta.meta_key = "_arg_author" 
+    WHERE wp_postmeta.meta_key = "_arg_author"
         AND LOWER(wp_postmeta.meta_value) LIKE LOWER('%\"username\":\"{$username}\"%')
         AND post_status = 'publish'
     ORDER BY post_date DESC
@@ -50,7 +50,7 @@ END;
           <div class="row content article">
             <div class="col-md-9">
               <div class="relative">
-              
+
                 <div class="article-text article-header">
 
 
@@ -59,7 +59,7 @@ END;
                 <div class="clearfix"></div>
                 </div>
               </div>
-             
+
               <div class="article-text">
 
         <?php

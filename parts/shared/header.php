@@ -36,6 +36,7 @@
                     <li><a href="/donate">Donate</a></li>
                     <li><a href="/submit-a-wespeak">Submit a Wespeak</a></li>
                     <li><a href="/submit-a-tip">Submit a tip</a></li>
+                    <li><a href="/wesceleb-nomination">Nominate a WesCeleb</a></li>
                   </ul>
                 </div><!--/.navbar-collapse -->
               </div>
