@@ -3,7 +3,7 @@
  * The template for sidebar.
  *
  *
- * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts() 
+ * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts()
  *
  * @package 	WordPress
  * @subpackage 	Abraham Lincoln
@@ -13,7 +13,7 @@
               <div class="box">
                 <h2><a href="section.html">Media</a></h2>
                 <?php
-                  $args = array( 
+                  $args = array(
                     'numberposts' => '3',
                     'category' => 89,
                     'orderby' => 'post_date',
@@ -31,6 +31,9 @@
                   }
                 ?>
               </div>
+
+              <?php twitter_feed(); ?>
+
               <!--<div class="box">
                 <h2><a href="section.html">Popular</a></h2>
                 <ul>

@@ -363,7 +363,7 @@ a:hover {
 
 .article-header h1 a {
     color: white;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: 'abraham_lincolnregular', Georgia, serif;
     font-size: 1.2em;
 }

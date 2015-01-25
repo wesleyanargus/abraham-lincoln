@@ -30,6 +30,19 @@
 		echo abraham_get_author($uppercase);
 	}
 
+  function twitter_feed() {
+  ?>
+        <div class="col-md-3">
+          <div class="box pdf-box">
+            <h2>Twitter</h2>
+            <a class="twitter-timeline" href="https://twitter.com/wesleyanargus" data-widget-id="559476995713937408">Tweets by @wesleyanargus</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+      </div>
+  <?php
+  }
+
 	function abraham_get_author($uppercase = true) {
 		if ($uppercase) {
 			$b = 'B';
