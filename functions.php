@@ -30,9 +30,11 @@
 		echo abraham_get_author($uppercase);
 	}
 
-  function twitter_feed() {
+  function twitter_feed($withCol = true) {
+    if($withCol) {
+      echo '<div class="col-md-3">';
+    }
   ?>
-        <div class="col-md-3">
           <div class="box pdf-box">
             <h2>Twitter</h2>
             <a class="twitter-timeline" href="https://twitter.com/wesleyanargus" data-widget-id="559476995713937408">Tweets by @wesleyanargus</a>
@@ -41,6 +43,9 @@
         </div>
       </div>
   <?php
+    if($withCol) {
+      echo '</div>';
+    }
   }
 
 	function abraham_get_author($uppercase = true) {

@@ -32,7 +32,7 @@
                 ?>
               </div>
 
-              <?php twitter_feed(); ?>
+              <?php twitter_feed(false); ?>
 
               <!--<div class="box">
                 <h2><a href="section.html">Popular</a></h2>
