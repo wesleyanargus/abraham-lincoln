@@ -15,7 +15,7 @@ Classy Wordpress theme designed for [The Wesleyan Argus](http://wesleyanargus.co
 
 (The MIT License)
 
-Copyright (c) 2014 [Cumhur Korkut](http://joom.im)
+Copyright (c) 2014 [Joomy Korkut](http://cattheory.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
