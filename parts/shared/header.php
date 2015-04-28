@@ -14,7 +14,7 @@ $sports_class   = ($category_id == 5)  ? "selected" : "";
       <div id="logo">
         <div class="header">
           <h1>
-            <span class="the">The</span> Wesleyan <span class="argus">Argus</span>
+            <span class="the">the</span> Wesleyan <span class="argus">Argus</span>
           </h1>
         </div>
         <!-- navigation -->
