@@ -110,6 +110,7 @@ li.selected {
 
 .navbar-second li {
   color:#231F20;
+  padding-top: 3px;
 }
 .navbar-inverse {
   border:none;
