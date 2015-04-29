@@ -34,6 +34,9 @@ a:hover {
 a.header {
   text-decoration:none;
 }
+li.selected {
+    background-color:rgba(209, 35, 42, 0.84);
+}
 .header {
   background-color: transparent;
   color:#231F20;
