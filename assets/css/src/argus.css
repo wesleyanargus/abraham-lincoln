@@ -35,7 +35,17 @@ a.header {
   text-decoration:none;
 }
 li.selected {
-    background-color:rgba(209, 35, 42, 0.84);
+    background-color:#D1232A;
+}
+.navbar-first li {
+    text-indent: -4.5px;
+    margin-left: 4px;
+}
+.navbar-first .nav>li.selected>a {
+    color: white;
+}
+.navbar-first .nav>li.selected>a:hover {
+    color: white;
 }
 .header {
   background-color: transparent;
