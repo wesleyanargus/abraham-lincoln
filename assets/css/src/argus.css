@@ -31,6 +31,9 @@ a:hover {
   color:#D1232A;
   background-color:rgba(209,76,35,0.1);
 }
+a.header {
+  text-decoration:none;
+}
 .header {
   background-color: transparent;
   color:#231F20;
