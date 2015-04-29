@@ -12,11 +12,11 @@ $sports_class   = ($category_id == 5)  ? "selected" : "";
 ?>
     <div class="container">
       <div id="logo">
-        <div class="header">
+        <a class="header" href="/"><div class="header">
           <h1>
             <span class="the">the</span> Wesleyan <span class="argus">Argus</span>
           </h1>
-        </div>
+        </div></a>
         <!-- navigation -->
         <div class="navbar navbar-inverse navbar-first" role="navigation">
           <div class="container">
