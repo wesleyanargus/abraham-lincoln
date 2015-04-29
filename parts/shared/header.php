@@ -2,13 +2,18 @@
 $categories     = get_the_category();
 $category_id    = $categories[0]->cat_ID;
 
-$home_class     = "";
-$news_class     = ($category_id == 3)  ? "selected" : "";
-$features_class = ($category_id == 4)  ? "selected" : "";
-$opinion_class  = ($category_id == 16) ? "selected" : "";
-$wespeaks_class = ($category_id == 13) ? "selected" : "";
-$arts_class     = ($category_id == 6)  ? "selected" : "";
-$sports_class   = ($category_id == 5)  ? "selected" : "";
+$news_class     = ($category_id == 3)   ? "selected" : "";
+$features_class = ($category_id == 4)   ? "selected" : "";
+$opinion_class  = ($category_id == 16)  ? "selected" : "";
+$wespeaks_class = ($category_id == 13)  ? "selected" : "";
+$arts_class     = ($category_id == 6)   ? "selected" : "";
+$sports_class   = ($category_id == 5)   ? "selected" : "";
+if (is_home()) { 
+  $home_class = "selected";
+  $arts_class = "";
+} else { 
+  $home_class = "";
+}
 ?>
     <div class="container">
       <div id="logo">
@@ -22,13 +27,13 @@ $sports_class   = ($category_id == 5)  ? "selected" : "";
           <div class="container">
             <div class="navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a class="<?=$home_class ?>" href="/">Home</a></li>
-                <li><a class="<?=$news_class ?>" href="/section/news">News</a></li>
-                <li><a class="<?=$features_class ?>" href="/section/features">Features</a></li>
-                <li><a class="<?=$opinion_class ?>" href="/section/opinion">Opinion</a></li>
-                <li><a class="<?=$wespeaks_class ?>" href="/section/wespeaks">Wespeaks</a></li>
-                <li><a class="<?=$arts_class ?>" href="/section/arts">Arts</a></li>
-                <li><a class="<?=$sports_class ?>" href="/section/sports">Sports</a></li>
+                <li class="<?=$home_class ?>"><a href="/">Home</a></li>
+                <li class="<?=$news_class ?>"><a href="/section/news">News</a></li>
+                <li class="<?=$features_class ?>"><a href="/section/features">Features</a></li>
+                <li class="<?=$opinion_class ?>"><a href="/section/opinion">Opinion</a></li>
+                <li class="<?=$wespeaks_class ?>"><a href="/section/wespeaks">Wespeaks</a></li>
+                <li class="<?=$arts_class ?>"><a href="/section/arts">Arts</a></li>
+                <li class="<?=$sports_class ?>"><a href="/section/sports">Sports</a></li>
                 <li><a id="search"><i class="fa fa-search"></i><input></a></li>
               </ul>
             </div><!--/.navbar-collapse -->
