@@ -31,7 +31,7 @@ if (is_home()) {
                 <li class="<?=$news_class ?>"><a href="/section/news">News</a></li>
                 <li class="<?=$features_class ?>"><a href="/section/features">Features</a></li>
                 <li class="<?=$opinion_class ?>"><a href="/section/opinion">Opinion</a></li>
-                <li class="<?=$wespeaks_class ?>"><a href="/section/wespeaks">Wespeaks</a></li>
+                <li class="<?=$wespeaks_class ?>"><a href="/section/wespeaks">Letters to Editor</a></li>
                 <li class="<?=$arts_class ?>"><a href="/section/arts">Arts</a></li>
                 <li class="<?=$sports_class ?>"><a href="/section/sports">Sports</a></li>
                 <li><a id="search"><i class="fa fa-search"></i><input></a></li>
@@ -41,8 +41,8 @@ if (is_home()) {
         </div>
       </div>
           <div class="row classy-lincoln">
-        <div class="col-md-2 date"></div>
-        <div class="col-md-8">
+        <div class="col-md-1 date"></div>
+        <div class="col-md-10">
           <div class="navbar navbar-second" role="navigation">
               <div class="container">
                 <div class="navbar-collapse">
@@ -50,15 +50,16 @@ if (is_home()) {
                     <li><a href="/about-the-argus">About</a></li>
                     <li><a href="/staff">Staff</a></li>
                     <li><a href="/donate">Donate</a></li>
-                    <li><a href="/submit-a-wespeak">Submit a Wespeak</a></li>
+                    <li><a href="/submit-a-wespeak">Submit Letter to Editor</a></li>
                     <li><a href="/submit-a-tip">Submit a tip</a></li>
                     <li><a href="/wesceleb-nomination">Nominate a WesCeleb</a></li>
+                    <li><a href="/ask-our-advice-columnist">Ask For Advice</a></li>
                   </ul>
                 </div><!--/.navbar-collapse -->
               </div>
           </div>
         </div>
-        <div class="col-md-2 social-icons">
+        <div class="social-icons">
           <a href="http://www.facebook.com/wesleyanargus" target="_blank"><i class="fa fa-facebook"></i></a>
           <a href="http://twitter.com/wesleyanargus" target="_blank"><i class="fa fa-twitter"></i></a>
         </div>
