@@ -10,7 +10,12 @@ $arts_class     = ($category_id == 6)   ? "selected" : "";
 $sports_class   = ($category_id == 5)   ? "selected" : "";
 if (is_home()) { 
   $home_class = "selected";
+  $news_class = "";
+  $features_class = "";
+  $opinions_class = "";
   $arts_class = "";
+  $wespeaks_class = "";
+  $sports_class = "";
 } else { 
   $home_class = "";
 }
@@ -41,8 +46,8 @@ if (is_home()) {
         </div>
       </div>
           <div class="row classy-lincoln">
-        <div class="col-md-1 date"></div>
-        <div class="col-md-10">
+        <div class="col-md-2 date"></div>
+        <div class="col-md-9">
           <div class="navbar navbar-second" role="navigation">
               <div class="container">
                 <div class="navbar-collapse">
