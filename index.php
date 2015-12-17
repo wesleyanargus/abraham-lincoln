@@ -24,20 +24,18 @@
 
     $top_posts = get_posts($args);
     echo "<!-- total " . count($top_posts) . " posts -->";
-      //image for the first one
-    //echo '<li><a href="' . get_permalink($recent[0]["ID"]) . '" title="Look '.esc_attr($recent[0]["post_title"]).'" ><strong>' .   $recent[0]["post_title"].'</strong>By ' .   $recent[0]["post_author"].'</a> </li> ';
     $post = $top_posts[0];
   ?>
       <div class="row">
           <div class="row content top">
             <div class="col-md-7">
               <div class="relative">
-                <img src="<? echo arg_photo($post, 650, '', '', true); ?>">
+                <img src="<?php echo arg_photo($post, 650, '', '', true); ?>">
                 <div class="on-top white-top">
                   <h2><span><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
                     <?php echo str_replace(":", ":<br>", get_the_title()); ?>
                   </a></span></h2>
-                  <h4><span><?php the_date(); ?> <?php the_time_ago(); ?> <? echo abraham_get_author(false); ?></span></h4>
+                  <h4><span><?php the_time(); ?> by <a href='/user/<?php the_author_meta('user_login', $post->post_author);  ?>/'><?php the_author_meta('nickname', $post->post_author); ?></a></span></h4>
                 </div>
               </div>
                 <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
@@ -60,13 +58,13 @@
               ?>
               <div class="media">
                 <a class="pull-left" href="#">
-                  <img src="<? echo arg_photo($post, 170, '', '', true); ?>">
+                  <img src="<?php echo arg_photo($post, 170, '', '', true); ?>">
                 </a>
                 <div class="media-body">
                   <h4 class="media-heading">
                     <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
                   </h4>
-                  <h5><span><? echo abraham_get_author(false); ?></span></h5>
+                  <h5><span>By <?php echo get_the_author_meta('nickname', $post->post_author); ?></span></h5>
                   <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
                 </div>
               </div>
@@ -87,7 +85,7 @@ $first_row = array(
   array("section" => "Arts",    "id" => 6)
 );
 $second_row = array(
-  array("section" => "Wespeaks","id" => 13),
+  array("section" => "Letters to the Editor","id" => 13),
   array("section" => "Opinion", "id" => 16)
   /* array("section" => "Food",    "id" => 75) */
   //the fourth column is the PDF viewer
@@ -113,7 +111,7 @@ $second_row = array(
                   echo "<img src='". arg_photo($post, 263, '', '', true)  . "'>";
                   echo "<ul>";
                 }
-                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . "By " . get_the_author_meta('nickname', $top_post->post_author) . '</li> ';
               }
 
               $args = array(
@@ -129,7 +127,7 @@ $second_row = array(
     					foreach( $cat_posts as $post ){
                 //image for the first one
 
-    						echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+    						echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . "By " . get_the_author_meta('nickname', $post->post_author) . '</li> ';
               }
     				?>
             </ul>
@@ -156,7 +154,7 @@ $second_row = array(
             );
 					$recent_posts = get_posts( $args );
 					foreach( $recent_posts as $post ){
-                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . "By " . get_the_author_meta('nickname', $post->post_author) . '</li> ';
 					}
 				?>
             </ul>
@@ -182,7 +180,7 @@ $second_row = array(
                   echo "<img src='". arg_photo($post, 263, '', '', true)  . "'>";
                   echo "<ul>";
                 }
-                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . abraham_get_author(true) . '</li> ';
+                echo '<li><a href="' . get_permalink() . '" title="Look '.get_the_title().'" ><strong>' .   get_the_title().'</strong></a>' . "By " . get_the_author_meta('nickname', $post->post_author) . '</li> ';
                 $count++;
               }
             ?>

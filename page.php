@@ -26,10 +26,6 @@
                 </div>
               </div>
               <div class="article-text">
-                <!--<div class="photo">
-                <img src="http://wesleyanargus.com/wp-content/uploads/2014/02/Arora_SenatorTalk2.jpg">
-                <small>Trisha Arora/Photo Editor</small>
-                </div>-->
                 <?php the_content(); ?>
 				
               </div>

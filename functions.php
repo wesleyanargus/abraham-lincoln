@@ -55,15 +55,15 @@
 			$b = 'b';
 		}
 		global $post;
-		if (arg_has_authors()) {
+		/*if (arg_has_authors()) {
 	        $byline = arg_authors();
 	        $byline = $b.'y ' . $byline;
 
 	        if (arg_has_byline_sub()) $byline .= ', ' . arg_byline_sub(true);
 	        return $byline;
-	    } else {
+	    } else {*/
 	    	return $b.'y '.get_the_author().', '.get_user_meta($post->post_author,"wpum_position", true);
-	    }
+	    //}
 
 	}
 

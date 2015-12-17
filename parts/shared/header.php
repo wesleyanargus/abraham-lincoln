@@ -12,7 +12,7 @@ if (is_home()) {
   $home_class = "selected";
   $news_class = "";
   $features_class = "";
-  $opinions_class = "";
+  $opinion_class = "";
   $arts_class = "";
   $wespeaks_class = "";
   $sports_class = "";
@@ -55,10 +55,10 @@ if (is_home()) {
                     <li><a href="/about-the-argus">About</a></li>
                     <li><a href="/staff">Staff</a></li>
                     <li><a href="/donate">Donate</a></li>
-                    <li><a href="/submit-a-wespeak">Submit Letter to Editor</a></li>
+                    <li><a href="/submit-a-wespeak">Submit a Letter</a></li>
                     <li><a href="/submit-a-tip">Submit a tip</a></li>
                     <li><a href="/wesceleb-nomination">Nominate a WesCeleb</a></li>
-                    <li><a href="/ask-our-advice-columnist">Ask For Advice</a></li>
+                    <li><a href="/ask-our-advice-columnist">Advice</a></li>
                   </ul>
                 </div><!--/.navbar-collapse -->
               </div>
