@@ -18,7 +18,7 @@
               <div class="relative">
                 <div class="article-text article-header">
 	                <h1><span><a href="#"><?php the_title(); ?></a><span></h1>
-	                <h4><span><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?>, <?php the_time(); ?></time> <? echo abraham_get_author(false); ?></span></h4>
+	                <h4><span><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time(); ?></time>, <?php abraham_display_author('false'); ?></a></span></h4>
                 </div>
               </div>
               <div class="article-text">

@@ -29,12 +29,12 @@
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="<?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?>">
     <meta itemprop="description" content="Wesleyan University's twice-weekly student newspaper since 1868.">
-    <meta itemprop="image" content="<?php if($post) { echo arg_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>">
+    <meta itemprop="image" content="<?php if($post) { echo abraham_get_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>">
 
     <!-- Open Graph data -->
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?php wp_title( '' ); ?>" />
-    <meta property="og:image" content="<?php if($post) { echo arg_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>" />
+    <meta property="og:image" content="<?php if($post) { echo abraham_get_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>" />
     <meta property="og:description" content="Wesleyan University's twice-weekly student newspaper since 1868." />
     <meta property="og:site_name" content="The Wesleyan Argus" />
 
@@ -42,7 +42,7 @@
     <meta name="twitter:site" content="@wesleyanargus" />
     <meta name="twitter:title" content="<?php wp_title( '' ); ?>" />
     <meta name="twitter:description" content="Wesleyan University's twice-weekly student newspaper since 1868." />
-    <meta name="twitter:image" content="<?php if($post) { echo arg_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>" />
+    <meta name="twitter:image" content="<?php if($post) { echo abraham_get_photo($post, 650, '', '', true); } else { ?>http://wesleyanargus.com/wp-content/themes/abraham/assets/img/logo2.png<?php } ?>" />
 
     <?php wp_head(); ?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

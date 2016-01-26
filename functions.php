@@ -17,6 +17,7 @@
 
 	require_once( 'external/starkers-utilities.php' );
 
+
 	/* ========================================================================================================================
 
 	Theme specific settings
@@ -42,12 +43,19 @@
           </div>
         </div>
       </div>
-  <?php
-    if($withCol) {
-      echo '</div>';
-    }
-  }
+<?php
+if($withCol) {
+echo '</div>';
+}
 
+
+}
+	function abraham_get_photo($post, $size, $arg2='', $arg3='', $arg4=true) {
+		if (has_post_thumbnail($post->ID)) {
+			return wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0];
+		}
+		return arg_photo($post,$size,$arg2,$arg3,$arg4);
+	}
 	function abraham_get_author($uppercase = true) {
 		if ($uppercase) {
 			$b = 'B';
@@ -55,15 +63,33 @@
 			$b = 'b';
 		}
 		global $post;
-		if (arg_has_authors()) {
-	        $byline = arg_authors();
-	        $byline = $b.'y ' . $byline;
-
-	        if (arg_has_byline_sub()) $byline .= ', ' . arg_byline_sub(true);
-	        return $byline;
-	    } else {
-	    	return $b.'y '.get_the_author().', '.get_user_meta($post->post_author,"wpum_position", true);
-	    }
+                $authors = get_post_meta($post->ID, '_arg_author', false);
+		foreach ($authors as $author_str) {
+			if (!is_array($author_str)) {
+				$author = json_decode($author_str);
+				if (!isset($firstAuthor)) {
+					$byline = $byline . $author->{'name'};
+					$firstAuthor = $author->{'username'};
+				} else {
+					$byline = $byline . ', ' . $author->{'name'};
+				}
+			} else {
+				foreach ($author_str as $author_id) {
+					$author = get_user_by('id', $author_id);
+					$name = $author->first_name . ' ' . $author->last_name;
+					if (strlen($name) < 2) {
+						$name = $author->nickname;
+					}
+					if (!isset($firstAuthor)) {
+						$byline = $byline . $name;
+						$firstAuthor = $author->user_login;
+					} else {
+						$byline = $byline . ', ' . $name;
+					}
+				}
+			}
+		}
+	        return '<a href="/user/' . $firstAuthor . '/">' . $b.'y ' . $byline . "</a>";
 
 	}
 
